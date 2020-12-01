@@ -27,7 +27,6 @@ public class ThreadCollection {
         for (int i = 0; i < 3; i++) {
             SumThread sumThread = new SumThread(integers, i);
             sumThread.start();
-
             boolean flag = true;
             while (flag) {
                 int sum = sumThread.getSum();
@@ -36,7 +35,6 @@ public class ThreadCollection {
                     flag = false;
                 }
             }
-
         }
 
 
