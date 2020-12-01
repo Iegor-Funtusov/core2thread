@@ -19,7 +19,8 @@ public class SumThread extends Thread {
     @Override
     public void run() {
         System.out.println("name = " + Thread.currentThread().getName());
-        for (int i = 0; i < integers.size(); i += startIndex) {
+        System.out.println("startIndex = " + startIndex);
+        for (int i = startIndex; i < integers.size(); i += 3) {
             int pos = i + startIndex;
             if (pos < integers.size()) {
                 sum += integers.get(i);

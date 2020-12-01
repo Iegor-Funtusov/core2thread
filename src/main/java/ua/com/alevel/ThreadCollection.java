@@ -24,9 +24,19 @@ public class ThreadCollection {
 
     public void sum() throws InterruptedException {
         System.out.println("integers = " + integers);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             SumThread sumThread = new SumThread(integers, i);
             sumThread.start();
+
+            boolean flag = true;
+            while (flag) {
+                int sum = sumThread.getSum();
+                if (sum != 0) {
+                    System.out.println("sum = " + sum);
+                    flag = false;
+                }
+            }
+
         }
 
 
