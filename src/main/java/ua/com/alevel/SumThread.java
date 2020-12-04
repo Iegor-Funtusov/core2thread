@@ -32,4 +32,5 @@ public class SumThread extends Thread {
     public int getSum() {
         return sum;
     }
+
 }

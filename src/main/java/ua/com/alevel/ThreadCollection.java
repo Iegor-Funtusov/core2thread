@@ -28,13 +28,12 @@ public class ThreadCollection {
             SumThread sumThread = new SumThread(integers, i);
             sumThread.start();
             boolean flag = true;
-            while (flag) {
-                int sum = sumThread.getSum();
-                if (sum != 0) {
-                    System.out.println("sum = " + sum);
-                    flag = false;
-                }
+            int sum = 0;
+            do {
+                sum = sumThread.getSum();
             }
+            while (flag);
+            System.out.println("sum = " + sum);
         }
 
 
